@@ -1,0 +1,53 @@
+doctype html
+//[if IE 9]><html class="lt-ie10" lang="en" > <![endif]
+html(class='no-js', lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Memory Game
+    script(src='js/vendor/modernizr.js')
+    link(rel='stylesheet', href='css/normalize.css')
+    link(rel='stylesheet', href='css/foundation.css')
+    link(rel='stylesheet', href='css/app.css')
+  body
+    audio(id='wrong' src="media/wrong.mp3" preload='auto')
+    audio(id='ding' src="media/ding.wav" preload='auto')
+    audio(id='shuffle' src="media/shuffle.wav" preload='auto')
+    audio(id="a0" src="media/batman.wav" preload='auto')
+    audio(id='a1' src="media/barbie.wav" preload='auto')
+    audio(id='a2' src="media/beatles.wav" preload='auto')
+    audio(id='a3' src="media/ernie.wav" preload='auto')
+    audio(id='a4' src="media/blues.wav" preload='auto')
+    audio(id='a5' src="media/r2d2.wav" preload='auto')
+    audio(id='a6' src="media/lucy.wav" preload='auto')
+    audio(id='a7' src="media/finemess.wav" preload='auto')
+    audio(id='a8' src="media/chong.wav" preload='auto')
+    audio(id='a9' src="media/muppets.wav" preload='auto')
+    .row
+      .small-11.medium-10.medium-offset-1.columns
+          .small-9.medium-8.columns#title
+            h2 Famous Pairs Memory Game
+          .small-2.columns#btn
+            button.radius.play Play!
+    .row
+      .small-12.small-centered.medium-offset-4.columns#counter
+        h4 Flips:<span id='flip-count'> 0</span> Matches:<span id='match-count'> 0</span>/10
+    .row#board
+      .small-12.medium-10.small-centered.columns#boardContainer
+        ul.small-block-grid-4
+          - for(var i = 0; i < 20; i++)
+            li
+              .tile.tileStyle1.flipbox-front
+                .content.hidden
+
+    .shuffling.hidden
+      p#p1 Shuffling!
+      p#p2 Time to Match!
+
+  script(src='js/vendor/jquery.js')
+  script(src='js/vendor/jqueryUI.js')
+  script(src='js/vendor/jquery.flip.min.js')
+  script(src='js/vendor/foundation.min.js')
+  script(src='js/vendor/lodash.js')
+  script(src='js/source/main.js')
+
